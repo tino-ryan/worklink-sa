@@ -1,0 +1,680 @@
+/* app/auth/auth.module.css - Shared styles for all auth pages */
+
+/* ===================================
+   LAYOUT & CONTAINER
+   =================================== */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d1fae5 0%, #ffffff 50%, #ccfbf1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.content {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* ===================================
+   BACK BUTTON
+   =================================== */
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 16px;
+  padding: 6px 0;
+  transition: color 0.3s;
+}
+
+.backButton:hover {
+  color: #059669;
+}
+
+.backIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s;
+}
+
+.backButton:hover .backIcon {
+  transform: translateX(-3px);
+}
+
+/* ===================================
+   CARD
+   =================================== */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* ===================================
+   HEADER
+   =================================== */
+.header {
+  background: linear-gradient(135deg, #059669 0%, #14b8a6 100%);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.iconCircle {
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: #059669;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #d1fae5;
+  margin: 0;
+}
+
+/* ===================================
+   FORM
+   =================================== */
+.form {
+  padding: 24px;
+}
+
+/* ===================================
+   ERROR ALERT
+   =================================== */
+.error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  animation: shake 0.5s ease-in-out;
+}
+
+.errorIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+/* ===================================
+   FORM GROUPS & INPUTS
+   =================================== */
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px 10px 38px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  transition: all 0.3s;
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+.helperText {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Password toggle button */
+.togglePassword {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.togglePassword:hover {
+  color: #059669;
+}
+
+.togglePassword svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===================================
+   USER TYPE SELECTION (for signup)
+   =================================== */
+.userTypeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.userTypeButton {
+  position: relative;
+  padding: 16px 12px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.userTypeButton:hover {
+  border-color: #d1d5db;
+  transform: translateY(-2px);
+}
+
+.userTypeButton.selected {
+  border-color: #059669;
+  background: #f0fdf4;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+}
+
+.checkmark {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 20px;
+  height: 20px;
+  background: #059669;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.checkmark svg {
+  width: 12px;
+  height: 12px;
+}
+
+.userTypeEmoji {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.userTypeTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.userTypeDesc {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* ===================================
+   SUBMIT BUTTON
+   =================================== */
+.submitButton {
+  width: 100%;
+  padding: 11px 20px;
+  background: linear-gradient(135deg, #059669 0%, #14b8a6 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===================================
+   LOADING SPINNER
+   =================================== */
+.spinner {
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinnerCircle {
+  opacity: 0.25;
+}
+
+.spinnerPath {
+  opacity: 0.75;
+}
+
+/* ===================================
+   LINKS & FOOTER
+   =================================== */
+.link {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.forgotLink {
+  color: #059669;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+.terms {
+  text-align: center;
+  font-size: 12px;
+  color: #6b7280;
+  margin: 16px 0 0 0;
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===================================
+   SUCCESS MESSAGE (for verify-email, etc.)
+   =================================== */
+.success {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #059669;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.successIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ===================================
+   INFO MESSAGE
+   =================================== */
+.info {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.infoIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ===================================
+   SUCCESS PAGE (verify-email, reset sent)
+   =================================== */
+.successPage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d1fae5 0%, #ffffff 50%, #ccfbf1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.successCard {
+  max-width: 460px;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.successIconCircle {
+  width: 80px;
+  height: 80px;
+  background: #f0fdf4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.successIconCircle svg {
+  width: 40px;
+  height: 40px;
+  color: #059669;
+}
+
+.successTitle {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.successText {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+.infoBox {
+  background: #eff6ff;
+  border: 2px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.infoBoxTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e40af;
+  margin: 0 0 4px 0;
+}
+
+.infoBoxText {
+  font-size: 13px;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #059669 0%, #14b8a6 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.primaryButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ===================================
+   PASSWORD REQUIREMENTS BOX
+   =================================== */
+.requirementsBox {
+  background: #eff6ff;
+  border: 2px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.requirementsTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e40af;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.requirementsTitle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.requirementsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  color: #1e3a8a;
+}
+
+.requirementsList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.requirementsList li:last-child {
+  margin-bottom: 0;
+}
+
+.requirementsList svg {
+  width: 16px;
+  height: 16px;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+/* ===================================
+   DIVIDER WITH TEXT
+   =================================== */
+.divider {
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 20px;
+}
+
+.dividerText {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+/* ===================================
+   MOBILE RESPONSIVE
+   =================================== */
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .header {
+    padding: 24px 20px;
+  }
+
+  .iconCircle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .form {
+    padding: 20px;
+  }
+
+  .formGroup {
+    margin-bottom: 14px;
+  }
+
+  .inputIcon {
+    left: 10px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .input {
+    padding: 9px 10px 9px 34px;
+    font-size: 14px;
+  }
+
+  .userTypeGrid {
+    gap: 10px;
+  }
+
+  .userTypeButton {
+    padding: 14px 10px;
+  }
+
+  .userTypeEmoji {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .userTypeTitle {
+    font-size: 13px;
+  }
+
+  .userTypeDesc {
+    font-size: 11px;
+  }
+
+  .submitButton {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}

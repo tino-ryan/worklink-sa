@@ -1,0 +1,21 @@
+// lib/constants.ts
+export const SERVICE_CATEGORIES = [
+  { value: 'gardening', label: 'Gardening', icon: '🌱' },
+  { value: 'cleaning', label: 'Cleaning', icon: '🧹' },
+  { value: 'plumbing', label: 'Plumbing', icon: '🔧' },
+  { value: 'electrical', label: 'Electrical', icon: '⚡' },
+  { value: 'painting', label: 'Painting', icon: '🎨' },
+  { value: 'carpentry', label: 'Carpentry', icon: '🪚' },
+  { value: 'handyman', label: 'Handyman', icon: '🔨' },
+  { value: 'security', label: 'Security', icon: '🛡️' },
+  { value: 'cooking', label: 'Cooking', icon: '👨‍🍳' },
+  { value: 'childcare', label: 'Childcare', icon: '👶' },
+  { value: 'eldercare', label: 'Elder Care', icon: '👴' },
+  { value: 'laundry', label: 'Laundry', icon: '👕' },
+  { value: 'moving', label: 'Moving', icon: '📦' },
+  { value: 'mechanic', label: 'Mechanic', icon: '🚗' },
+  { value: 'welding', label: 'Welding', icon: '🔥' },
+  { value: 'tiling', label: 'Tiling', icon: '⬜' },
+  { value: 'roofing', label: 'Roofing', icon: '🏠' },
+  { value: 'construction', label: 'Construction', icon: '🏗️' },
+]
